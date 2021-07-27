@@ -11,14 +11,15 @@ go get -u github.com/softronaut/coincap-go
 ## Usage
 
 ```go
-client := coincap.DefaultClient()
-// or with retryablehttp
-retry := retryablehttp.NewClient()
+// Instance
+client := coincap.DefaultClient() // uses http.DefaultClient
+// Customization
+retry := retryablehttp.NewClient() // or you can use retryablehttp
 retry.RetryMax = 3
 retry.RetryWaitMax = time.Second * 5
-coincap.CustomClient(retry.StandardClient())
+client := coincap.CustomClient(retry.StandardClient())
 
-// api interface
+// API interface
 GetAssets(GetAssetsParams) (AssetsData, error)
 GetAsset(string) (AssetData, error)
 GetAssetHistory(GetAssetHistoryParams) (AssetHistoriesData, error)
@@ -30,7 +31,7 @@ GetExchange(string) (ExchangeData, error)
 GetMarkets(GetMarketsParams) (MarketsData, error)
 GetCandles(GetCandlesParams) (CandlesData, error)
 
-// request examples
+// Examples
 assets, err := client.GetAssets(GetAssetsParams{Ids: []string{"bitcoin", "ethereum"}})
 polkadot, err := client.GetAsset("polkadot")
 linkUsdc, err := client.GetMarkets(GetMarketsParams{ExchangeId: "binance", BaseSymbol: "link", QuoteId: "usd-coin"})
@@ -38,9 +39,9 @@ linkUsdc, err := client.GetMarkets(GetMarketsParams{ExchangeId: "binance", BaseS
 
 ## Notes
 
-All return and parameter types created.
+Each response and parameter declared as `struct`.
 
-Required parameters and limits handled before the requests, so you will know some errors during the development.
+Some parameter logics implemented (required parameters, api limits or start/end timestamp relations etc.).
 
 `gzip` encoding enabled by default.
 
