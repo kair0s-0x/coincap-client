@@ -1,4 +1,4 @@
-module coincap-go
+module coincap
 
 go 1.16
 

@@ -1,10 +1,10 @@
 # coincap-go
 
-[CoinCap](https://coincap.io/) REST API wrapper written with `Go`. For `docs` checkout: https://docs.coincap.io/
+[CoinCap.io](https://coincap.io/) REST API wrapper written with Go. For docs checkout: https://docs.coincap.io/
 
 ## Installation
 
-```shell
+```sh
 go get -u github.com/softronaut/coincap-go
 ```
 
@@ -14,20 +14,20 @@ go get -u github.com/softronaut/coincap-go
 // Instance
 client := coincap.DefaultClient() // uses http.DefaultClient
 // Customization
-retry := retryablehttp.NewClient() // or you can use retryablehttp
+retry := retryablehttp.NewClient() // or you can use a customized http.Client
 retry.RetryMax = 3
 retry.RetryWaitMax = time.Second * 5
 client := coincap.CustomClient(retry.StandardClient())
 
 // API interface
 GetAssets(GetAssetsParams) (AssetsData, error)
-GetAsset(string) (AssetData, error)
+GetAsset(id string) (AssetData, error)
 GetAssetHistory(GetAssetHistoryParams) (AssetHistoriesData, error)
 GetAssetMarkets(GetAssetMarketsParams) (AssetMarketsData, error)
 GetRates() (RatesData, error)
-GetRate(string) (RateData, error)
+GetRate(id string) (RateData, error)
 GetExchanges() (ExchangesData, error)
-GetExchange(string) (ExchangeData, error)
+GetExchange(id string) (ExchangeData, error)
 GetMarkets(GetMarketsParams) (MarketsData, error)
 GetCandles(GetCandlesParams) (CandlesData, error)
 
@@ -39,7 +39,7 @@ linkUsdc, err := client.GetMarkets(GetMarketsParams{ExchangeId: "binance", BaseS
 
 ## Notes
 
-Each response and parameter declared as `struct`.
+Each `response` and `parameter` declared as `struct`.
 
 Some parameter logics implemented (required parameters, api limits or start/end timestamp relations etc.).
 

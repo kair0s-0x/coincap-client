@@ -35,7 +35,7 @@ func TestClient_GetAssetHistory(t *testing.T) {
 			HistoryParams: HistoryParams{
 				Interval: M30,
 				Start:    t1,
-				End:      end, // 14 days
+				End:      end,
 			},
 		})
 		assert.NoError(t, err)
@@ -52,7 +52,7 @@ func TestClient_GetAssetHistory(t *testing.T) {
 			HistoryParams: HistoryParams{
 				Interval: M30,
 				Start:    t1,
-				End:      end.Add(time.Second), // 14 days
+				End:      end.Add(time.Second),
 			},
 		}
 		q, _ := params.toQuery()

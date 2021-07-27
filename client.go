@@ -19,7 +19,6 @@ func NewDefaultClient() *Client {
 	return &Client{httpClient: http.DefaultClient}
 }
 
-// NewCustomClient : you may consider using: https://github.com/hashicorp/go-retryablehttp
 func NewCustomClient(client *http.Client) *Client {
 	return &Client{httpClient: client}
 }
@@ -66,19 +65,21 @@ var ServerError = errors.New("server error")
 
 type api interface {
 	GetAssets(GetAssetsParams) (AssetsData, error)
-	GetAsset(string) (AssetData, error)
+	GetAsset(id string) (AssetData, error)
 	GetAssetHistory(GetAssetHistoryParams) (AssetHistoriesData, error)
 	GetAssetMarkets(GetAssetMarketsParams) (AssetMarketsData, error)
 
 	GetRates() (RatesData, error)
-	GetRate(string) (RateData, error)
+	GetRate(id string) (RateData, error)
 
 	GetExchanges() (ExchangesData, error)
-	GetExchange(string) (ExchangeData, error)
+	GetExchange(id string) (ExchangeData, error)
 
 	GetMarkets(GetMarketsParams) (MarketsData, error)
 
 	GetCandles(GetCandlesParams) (CandlesData, error)
 }
 
-var _ api = (*Client)(nil)
+func assertApiInterface() {
+	var _ api = (*Client)(nil)
+}
