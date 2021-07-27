@@ -1,4 +1,4 @@
-module coincap
+module github.com/softronaut/coincap-go
 
 go 1.16
 
