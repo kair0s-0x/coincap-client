@@ -1,0 +1,75 @@
+{
+  "data": [
+    {
+      "id": "bitcoin",
+      "rank": "1",
+      "symbol": "BTC",
+      "name": "Bitcoin",
+      "supply": "18767006.0000000000000000",
+      "maxSupply": "21000000.0000000000000000",
+      "marketCapUsd": "720972966941.8179384548997536",
+      "volumeUsd24Hr": "23924880952.7548243291986963",
+      "priceUsd": "38417.0478200847774256",
+      "changePercent24Hr": "11.5218288891427624",
+      "vwap24Hr": "37077.8011926142580929",
+      "explorer": "https://blockchain.info/"
+    },
+    {
+      "id": "ethereum",
+      "rank": "2",
+      "symbol": "ETH",
+      "name": "Ethereum",
+      "supply": "116846423.4365000000000000",
+      "maxSupply": null,
+      "marketCapUsd": "274371642594.9305009039915232",
+      "volumeUsd24Hr": "15451296861.3535602047813728",
+      "priceUsd": "2348.1389889870041825",
+      "changePercent24Hr": "8.4651468167070295",
+      "vwap24Hr": "2256.7181890904538805",
+      "explorer": "https://etherscan.io/"
+    },
+    {
+      "id": "tether",
+      "rank": "3",
+      "symbol": "USDT",
+      "name": "Tether",
+      "supply": "61810332357.3588400000000000",
+      "maxSupply": null,
+      "marketCapUsd": "61905332906.4544032994185884",
+      "volumeUsd24Hr": "43691024709.4935244044570240",
+      "priceUsd": "1.0015369687473336",
+      "changePercent24Hr": "0.0025370369973064",
+      "vwap24Hr": "1.0008957713552532",
+      "explorer": "https://www.omniexplorer.info/asset/31"
+    },
+    {
+      "id": "binance-coin",
+      "rank": "4",
+      "symbol": "BNB",
+      "name": "Binance Coin",
+      "supply": "168137036.0000000000000000",
+      "maxSupply": "168137036.0000000000000000",
+      "marketCapUsd": "53620366486.6219883074366892",
+      "volumeUsd24Hr": "1121286725.6718626330028780",
+      "priceUsd": "318.9087173311535497",
+      "changePercent24Hr": "6.7270443921588196",
+      "vwap24Hr": "309.5693381965163402",
+      "explorer": null
+    },
+    {
+      "id": "cardano",
+      "rank": "5",
+      "symbol": "ADA",
+      "name": "Cardano",
+      "supply": "32041069499.4670000000000000",
+      "maxSupply": "45000000000.0000000000000000",
+      "marketCapUsd": "43292646429.2922314535761147",
+      "volumeUsd24Hr": "1348493725.2928166284380674",
+      "priceUsd": "1.3511610912367454",
+      "changePercent24Hr": "10.6783745262101335",
+      "vwap24Hr": "1.2966602560033515",
+      "explorer": "https://cardanoexplorer.com/"
+    }
+  ],
+  "timestamp": 1627297413424
+}

@@ -1,0 +1,10 @@
+{
+  "data": {
+    "id": "usd-coin",
+    "symbol": "USDC",
+    "currencySymbol": null,
+    "type": "crypto",
+    "rateUsd": "1.0000000000000000"
+  },
+  "timestamp": 1627308351609
+}

@@ -1,0 +1,103 @@
+{
+  "data": [
+    {
+      "exchangeId": "bilaxy",
+      "rank": "7",
+      "baseSymbol": "SOL",
+      "baseId": "solana",
+      "quoteSymbol": "USDT",
+      "quoteId": "tether",
+      "priceQuote": "30.3718000000000000",
+      "priceUsd": "30.4181862994026290",
+      "volumeUsd24Hr": "2073835.8964275227391084",
+      "percentExchangeVolume": "1.3931042914989357",
+      "tradesCount24Hr": "2997",
+      "updated": 1627308836380
+    },
+    {
+      "exchangeId": "binance",
+      "rank": "24",
+      "baseSymbol": "SOL",
+      "baseId": "solana",
+      "quoteSymbol": "USDT",
+      "quoteId": "tether",
+      "priceQuote": "30.4120000000000000",
+      "priceUsd": "30.4584476961336751",
+      "volumeUsd24Hr": "151001680.3038231443619688",
+      "percentExchangeVolume": "0.6945834171271377",
+      "tradesCount24Hr": "165733",
+      "updated": 1627309308585
+    },
+    {
+      "exchangeId": "binance",
+      "rank": "108",
+      "baseSymbol": "SOL",
+      "baseId": "solana",
+      "quoteSymbol": "BTC",
+      "quoteId": "bitcoin",
+      "priceQuote": "0.0007906800000000",
+      "priceUsd": "30.3247645409936440",
+      "volumeUsd24Hr": "17114711.8389811714741999",
+      "percentExchangeVolume": "0.0787249188773752",
+      "tradesCount24Hr": "24794",
+      "updated": 1627309308549
+    },
+    {
+      "exchangeId": "binance",
+      "rank": "369",
+      "baseSymbol": "SOL",
+      "baseId": "solana",
+      "quoteSymbol": "BNB",
+      "quoteId": "binance-coin",
+      "priceQuote": "0.0953300000000000",
+      "priceUsd": "30.3717803376183508",
+      "volumeUsd24Hr": "1469906.0901777490869314",
+      "percentExchangeVolume": "0.0067613313502035",
+      "tradesCount24Hr": "3617",
+      "updated": 1627309308513
+    },
+    {
+      "exchangeId": "bitmax",
+      "rank": "26",
+      "baseSymbol": "SOL",
+      "baseId": "solana",
+      "quoteSymbol": "USDT",
+      "quoteId": "tether",
+      "priceQuote": "30.4067000000000000",
+      "priceUsd": "30.4531396015397810",
+      "volumeUsd24Hr": "716236.5262304945703782",
+      "percentExchangeVolume": "0.5160261868716838",
+      "tradesCount24Hr": "1180",
+      "updated": 1627309342062
+    },
+    {
+      "exchangeId": "hotbit",
+      "rank": "118",
+      "baseSymbol": "SOL",
+      "baseId": "solana",
+      "quoteSymbol": "USDT",
+      "quoteId": "tether",
+      "priceQuote": "30.3630370000000000",
+      "priceUsd": "30.4094099158316301",
+      "volumeUsd24Hr": "638161.8413883703643973",
+      "percentExchangeVolume": "0.1048429240806257",
+      "tradesCount24Hr": "1583",
+      "updated": 1627309328114
+    },
+    {
+      "exchangeId": "hotbit",
+      "rank": "707",
+      "baseSymbol": "SOL",
+      "baseId": "solana",
+      "quoteSymbol": "BTC",
+      "quoteId": "bitcoin",
+      "priceQuote": "0.0007885700000000",
+      "priceUsd": "30.2438402060142634",
+      "volumeUsd24Hr": "100984.4848862836857751",
+      "percentExchangeVolume": "0.0165906326508332",
+      "tradesCount24Hr": "1341",
+      "updated": 1627309343887
+    }
+  ],
+  "timestamp": 1627309368777
+}

@@ -1,0 +1,75 @@
+{
+  "data": [
+    {
+      "exchangeId": "Binance",
+      "baseId": "polkadot",
+      "quoteId": "tether",
+      "baseSymbol": "DOT",
+      "quoteSymbol": "USDT",
+      "volumeUsd24Hr": "293958357.0760118562305977",
+      "priceUsd": "14.8147535185393422",
+      "volumePercent": "51.5741334810654691"
+    },
+    {
+      "exchangeId": "Huobi",
+      "baseId": "polkadot",
+      "quoteId": "tether",
+      "baseSymbol": "DOT",
+      "quoteSymbol": "USDT",
+      "volumeUsd24Hr": "104211745.7689693752945023",
+      "priceUsd": "14.7592683005210161",
+      "volumePercent": "18.2836458199210589"
+    },
+    {
+      "exchangeId": "Binance",
+      "baseId": "polkadot",
+      "quoteId": "bitcoin",
+      "baseSymbol": "DOT",
+      "quoteSymbol": "BTC",
+      "volumeUsd24Hr": "31881974.5902328616823623",
+      "priceUsd": "14.7461393294506065",
+      "volumePercent": "5.5935991393890779"
+    },
+    {
+      "exchangeId": "Gate",
+      "baseId": "polkadot",
+      "quoteId": "tether",
+      "baseSymbol": "DOT",
+      "quoteSymbol": "USDT",
+      "volumeUsd24Hr": "6932905.3871594812726665",
+      "priceUsd": "14.8528119713316959",
+      "volumePercent": "1.2163579610580805"
+    },
+    {
+      "exchangeId": "Binance",
+      "baseId": "polkadot",
+      "quoteId": "binance-coin",
+      "baseSymbol": "DOT",
+      "quoteSymbol": "BNB",
+      "volumeUsd24Hr": "5703458.9668973683409634",
+      "priceUsd": "14.7819506429290745",
+      "volumePercent": "1.0006551845929761"
+    },
+    {
+      "exchangeId": "Huobi",
+      "baseId": "polkadot",
+      "quoteId": "bitcoin",
+      "baseSymbol": "DOT",
+      "quoteSymbol": "BTC",
+      "volumeUsd24Hr": "5250805.7185445577832241",
+      "priceUsd": "14.7549852438653939",
+      "volumePercent": "0.9212384968573418"
+    },
+    {
+      "exchangeId": "Bitfinex",
+      "baseId": "polkadot",
+      "quoteId": "united-states-dollar",
+      "baseSymbol": "DOT",
+      "quoteSymbol": "USD",
+      "volumeUsd24Hr": "3748288.2056412368400000",
+      "priceUsd": "14.8030000000000000",
+      "volumePercent": "0.6576261963297650"
+    }
+  ],
+  "timestamp": 1627302265623
+}

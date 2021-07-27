@@ -1,0 +1,40 @@
+{
+  "data": [
+    {
+      "id": "australian-dollar",
+      "symbol": "AUD",
+      "currencySymbol": "$",
+      "type": "fiat",
+      "rateUsd": "0.7354152448638599"
+    },
+    {
+      "id": "turkish-lira",
+      "symbol": "TRY",
+      "currencySymbol": "Kr",
+      "type": "fiat",
+      "rateUsd": "0.1168306189686193"
+    },
+    {
+      "id": "united-states-dollar",
+      "symbol": "USD",
+      "currencySymbol": "$",
+      "type": "fiat",
+      "rateUsd": "1.0000000000000000"
+    },
+    {
+      "id": "usd-coin",
+      "symbol": "USDC",
+      "currencySymbol": null,
+      "type": "crypto",
+      "rateUsd": "1.0000000000000000"
+    },
+    {
+      "id": "tether",
+      "symbol": "USDT",
+      "currencySymbol": null,
+      "type": "crypto",
+      "rateUsd": "1.0015374205771500"
+    }
+  ],
+  "timestamp": 1627299565440
+}

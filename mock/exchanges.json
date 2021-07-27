@@ -1,0 +1,60 @@
+{
+  "data": [
+    {
+      "exchangeId": "binance",
+      "name": "Binance",
+      "rank": "1",
+      "percentTotalVolume": "34.048521811657673951000000000000000000",
+      "volumeUsd": "22888640560.5286014928163915",
+      "tradingPairs": "674",
+      "socket": true,
+      "exchangeUrl": "https://www.binance.com/",
+      "updated": 1627321517788
+    },
+    {
+      "exchangeId": "huobi",
+      "name": "Huobi",
+      "rank": "2",
+      "percentTotalVolume": "7.976338813745538508000000000000000000",
+      "volumeUsd": "5361981736.1441661178156059",
+      "tradingPairs": "595",
+      "socket": true,
+      "exchangeUrl": "https://www.hbg.com/",
+      "updated": 1627321546618
+    },
+    {
+      "exchangeId": "okex",
+      "name": "Okex",
+      "rank": "3",
+      "percentTotalVolume": "5.728232309512009473000000000000000000",
+      "volumeUsd": "3850723714.3768316089002121",
+      "tradingPairs": "293",
+      "socket": false,
+      "exchangeUrl": "https://www.okex.com/",
+      "updated": 1627321548446
+    },
+    {
+      "exchangeId": "gdax",
+      "name": "Coinbase Pro",
+      "rank": "4",
+      "percentTotalVolume": "4.855897403348345873000000000000000000",
+      "volumeUsd": "3264308826.0586459823067906",
+      "tradingPairs": "85",
+      "socket": true,
+      "exchangeUrl": "https://pro.coinbase.com/",
+      "updated": 1627321547924
+    },
+    {
+      "exchangeId": "hitbtc",
+      "name": "HitBTC",
+      "rank": "5",
+      "percentTotalVolume": "4.195587316515264173000000000000000000",
+      "volumeUsd": "2820424644.5480354517726477",
+      "tradingPairs": "772",
+      "socket": true,
+      "exchangeUrl": "https://hitbtc.com/",
+      "updated": 1627321497319
+    }
+  ],
+  "timestamp": 1627321566653
+}
