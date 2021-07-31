@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-var t1 = time.Date(2021, 6, 26, 0, 0, 0, 0, time.UTC)
+var t1 = time.Date(2020, 6, 26, 0, 0, 0, 0, time.UTC)
 var t2 = t1.Add(time.Hour * 24)
 
 func TestLimitOffsetParams(t *testing.T) {
