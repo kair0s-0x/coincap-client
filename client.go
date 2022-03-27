@@ -3,27 +3,47 @@ package coincap
 import (
 	"compress/gzip"
 	"encoding/json"
-	"errors"
+	"fmt"
 	"io"
 	"net/http"
 )
 
-const httpUrl = "https://api.coincap.io/v2"
-const wsUrl = "wss://ws.coincap.io/"
+const url = "https://api.coincap.io/v2"
+
+//const wsUrl = "wss://ws.coincap.io/"
+
+type CompressionType string
+
+const (
+	Gzip    CompressionType = "gzip"
+	Deflate CompressionType = "deflate"
+)
 
 type Client struct {
-	httpClient *http.Client
+	httpClient  *http.Client
+	bearerToken string
+	compression CompressionType
 }
 
-func NewDefaultClient() *Client {
-	return &Client{httpClient: http.DefaultClient}
+func NewClient(options ...Option) *Client {
+	client := &Client{
+		httpClient:  http.DefaultClient,
+		compression: Gzip,
+	}
+	for _, option := range options {
+		option(client)
+	}
+	return client
 }
 
-func NewCustomClient(client *http.Client) *Client {
-	return &Client{httpClient: client}
-}
+type Option func(*Client)
 
-func (c *Client) do(url string, params queryParams, ptr interface{}) error {
+func WithHttpClient(hc *http.Client) Option { return func(c *Client) { c.httpClient = hc } }
+func WithBearerToken(bt string) Option      { return func(c *Client) { c.bearerToken = bt } }
+func WithGzipCompression() Option           { return func(c *Client) { c.compression = Gzip } }
+func WithDeflateCompression() Option        { return func(c *Client) { c.compression = Deflate } }
+
+func (c *Client) Do(url string, params queryParams, ptr interface{}) error {
 	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
 		return err
@@ -39,7 +59,8 @@ func (c *Client) do(url string, params queryParams, ptr interface{}) error {
 		}
 		req.URL.RawQuery = q.Encode()
 	}
-	req.Header.Set("Accept-Encoding", "gzip")
+	req.Header.Set("Accept-Encoding", *(*string)(&c.compression))
+	req.Header.Set("Authorization", fmt.Sprintf("Bearer %s", c.bearerToken))
 	res, err := c.httpClient.Do(req)
 	if err != nil {
 		return err
@@ -60,10 +81,7 @@ func (c *Client) do(url string, params queryParams, ptr interface{}) error {
 	return json.NewDecoder(reader).Decode(ptr)
 }
 
-var ClientError = errors.New("client error")
-var ServerError = errors.New("server error")
-
-type api interface {
+type Api interface {
 	GetAssets(GetAssetsParams) (AssetsData, error)
 	GetAsset(id string) (AssetData, error)
 	GetAssetHistory(GetAssetHistoryParams) (AssetHistoriesData, error)
@@ -81,5 +99,5 @@ type api interface {
 }
 
 func assertApiInterface() {
-	var _ api = (*Client)(nil)
+	var _ Api = (*Client)(nil)
 }

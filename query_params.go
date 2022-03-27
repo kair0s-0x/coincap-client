@@ -15,10 +15,6 @@ type queryParams interface {
 	toQuery() (map[string]string, error)
 }
 
-type commonParams interface {
-	include(map[string]string) (map[string]string, error)
-}
-
 type LimitOffsetParams struct {
 	Limit  int // optional, max limit of 2000
 	Offset int // optional
@@ -90,7 +86,7 @@ func (r HistoryParams) include(m map[string]string) (map[string]string, error) {
 
 type GetAssetsParams struct {
 	Search string   // optional, Search by asset Id (bitcoin) or symbol (BTC)
-	Ids    []string // optional, query with multiple Ids=bitcoin,ethereum,monero
+	Ids    []string // optional, query with multiple Ids=bitcoin,ethereum,...
 	LimitOffsetParams
 }
 

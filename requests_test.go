@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-var client = NewDefaultClient()
+var client = NewClient()
 
 func TestClient_GetAssets(t *testing.T) {
 	assets, err := client.GetAssets(GetAssetsParams{LimitOffsetParams: LimitOffsetParams{Limit: 10, Offset: 10}})
@@ -28,40 +28,31 @@ func TestClient_GetAsset(t *testing.T) {
 }
 
 func TestClient_GetAssetHistory(t *testing.T) {
+	interval := time.Hour * 24 * 7
+	start := time.Now().Truncate(time.Hour * 24).UTC().Add(-interval)
+	end := start.Add(interval)
 	t.Run("EndExclusive", func(t *testing.T) {
-		end := t1.Add(time.Hour * 24 * 14)
 		history, err := client.GetAssetHistory(GetAssetHistoryParams{
-			Id: "polkadot",
-			HistoryParams: HistoryParams{
-				Interval: M30,
-				Start:    t1,
-				End:      end,
-			},
+			Id:            "polkadot",
+			HistoryParams: HistoryParams{Interval: H1, Start: start, End: end},
 		})
 		require.NoError(t, err)
 		l := len(history.Data)
-		require.Equal(t, 24*14*2, l)
-		require.Equal(t, t1, history.Data[0].Date)
-		require.Equal(t, end.Add(-M30.Value()), history.Data[l-1].Date)
+		require.Equal(t, 24*7, l)
+		require.Equal(t, start, history.Data[0].Date)
+		require.Equal(t, end.Add(-H1.Value()), history.Data[l-1].Date)
 	})
 
 	t.Run("EndInclusive", func(t *testing.T) {
-		end := t1.Add(time.Hour * 24 * 7)
 		params := GetAssetHistoryParams{
-			Id: "polkadot",
-			HistoryParams: HistoryParams{
-				Interval: M30,
-				Start:    t1,
-				End:      end.Add(time.Second),
-			},
+			Id:            "polkadot",
+			HistoryParams: HistoryParams{Interval: H1, Start: start, End: end.Add(time.Second)},
 		}
-		q, _ := params.toQuery()
-		t.Log(q)
 		history, err := client.GetAssetHistory(params)
 		require.NoError(t, err, params)
 		l := len(history.Data)
-		require.Equal(t, 24*7*2+1, l)
-		require.Equal(t, t1, history.Data[0].Date)
+		require.Equal(t, 24*7+1, l)
+		require.Equal(t, start, history.Data[0].Date)
 		require.Equal(t, end, history.Data[l-1].Date)
 	})
 }
@@ -83,7 +74,7 @@ func TestClient_GetRates(t *testing.T) {
 	for i, v := range rates.Data {
 		symbols[i] = v.Symbol
 	}
-	require.Subset(t, symbols, []string{"USD", "GBP", "EUR", "USDC", "USDT", "AUD", "TRY", "BTC", "ETH", "CAD"})
+	require.Subset(t, symbols, []string{"USD", "GBP", "EUR", "USDT", "AUD", "TRY", "BTC", "ETH", "CAD"})
 }
 
 func TestClient_GetRate(t *testing.T) {

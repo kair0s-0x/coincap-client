@@ -4,7 +4,7 @@ import "fmt"
 
 func (c *Client) GetAssets(params GetAssetsParams) (AssetsData, error) {
 	var data AssetsData
-	err := c.do(fmt.Sprintf("%s/assets", httpUrl), params, &data)
+	err := c.Do(fmt.Sprintf("%s/assets", url), params, &data)
 	return data, err
 }
 
@@ -13,7 +13,7 @@ func (c *Client) GetAsset(id string) (AssetData, error) {
 	if len(id) == 0 {
 		return data, MissingParameterError
 	}
-	err := c.do(fmt.Sprintf("%s/assets/%s", httpUrl, id), nil, &data)
+	err := c.Do(fmt.Sprintf("%s/assets/%s", url, id), nil, &data)
 	return data, err
 }
 
@@ -22,7 +22,7 @@ func (c *Client) GetAssetHistory(params GetAssetHistoryParams) (AssetHistoriesDa
 	if len(params.Id) == 0 {
 		return data, MissingParameterError
 	}
-	err := c.do(fmt.Sprintf("%s/assets/%s/history", httpUrl, params.Id), params, &data)
+	err := c.Do(fmt.Sprintf("%s/assets/%s/history", url, params.Id), params, &data)
 	return data, err
 }
 
@@ -31,13 +31,13 @@ func (c *Client) GetAssetMarkets(params GetAssetMarketsParams) (AssetMarketsData
 	if len(params.Id) == 0 {
 		return data, MissingParameterError
 	}
-	err := c.do(fmt.Sprintf("%s/assets/%s/markets", httpUrl, params.Id), params, &data)
+	err := c.Do(fmt.Sprintf("%s/assets/%s/markets", url, params.Id), params, &data)
 	return data, err
 }
 
 func (c *Client) GetRates() (RatesData, error) {
 	var data RatesData
-	err := c.do(fmt.Sprintf("%s/rates", httpUrl), nil, &data)
+	err := c.Do(fmt.Sprintf("%s/rates", url), nil, &data)
 	return data, err
 }
 
@@ -46,13 +46,13 @@ func (c *Client) GetRate(id string) (RateData, error) {
 	if len(id) == 0 {
 		return data, MissingParameterError
 	}
-	err := c.do(fmt.Sprintf("%s/rates/%s", httpUrl, id), nil, &data)
+	err := c.Do(fmt.Sprintf("%s/rates/%s", url, id), nil, &data)
 	return data, err
 }
 
 func (c *Client) GetExchanges() (ExchangesData, error) {
 	var data ExchangesData
-	err := c.do(fmt.Sprintf("%s/exchanges", httpUrl), nil, &data)
+	err := c.Do(fmt.Sprintf("%s/exchanges", url), nil, &data)
 	return data, err
 }
 
@@ -61,18 +61,18 @@ func (c *Client) GetExchange(id string) (ExchangeData, error) {
 	if len(id) == 0 {
 		return data, MissingParameterError
 	}
-	err := c.do(fmt.Sprintf("%s/exchanges/%s", httpUrl, id), nil, &data)
+	err := c.Do(fmt.Sprintf("%s/exchanges/%s", url, id), nil, &data)
 	return data, err
 }
 
 func (c *Client) GetMarkets(params GetMarketsParams) (MarketsData, error) {
 	var data MarketsData
-	err := c.do(fmt.Sprintf("%s/markets", httpUrl), params, &data)
+	err := c.Do(fmt.Sprintf("%s/markets", url), params, &data)
 	return data, err
 }
 
 func (c *Client) GetCandles(params GetCandlesParams) (CandlesData, error) {
 	var data CandlesData
-	err := c.do(fmt.Sprintf("%s/candles", httpUrl), params, &data)
+	err := c.Do(fmt.Sprintf("%s/candles", url), params, &data)
 	return data, err
 }
