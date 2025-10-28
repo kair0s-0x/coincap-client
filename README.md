@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-go get -u github.com/softronaut/coincap-go
+go get -u github.com/kair0s-0x/coincap-go
 ```
 
 ## Usage
